@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink-950 text-cream font-sans antialiased;
+    /* Subtle brand-tinted ambient glow behind everything. */
+    background-image: theme('backgroundImage.wicys-radial');
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+
+  /* Respect users who prefer reduced motion — kill non-essential animation. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  ::selection {
+    @apply bg-wicys-purple-500/40 text-white;
+  }
+}
+
+@layer components {
+  /* Glassy surface used by cards, nav, and panels. */
+  .glass {
+    @apply border border-white/10 bg-white/5 backdrop-blur-md;
+  }
+
+  .glass-strong {
+    @apply border border-white/10 bg-ink-900/70 backdrop-blur-lg;
+  }
+
+  /* Gradient text for headings / brand words. */
+  .text-gradient {
+    @apply bg-wicys-gradient bg-clip-text text-transparent;
+  }
+
+  /* Container used across pages. */
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  /* Prose styling for rendered markdown articles. */
+  .prose-wicys {
+    @apply max-w-none text-cream/85 leading-relaxed;
+  }
+  .prose-wicys h2 {
+    @apply mt-10 mb-3 text-2xl text-white;
+  }
+  .prose-wicys h3 {
+    @apply mt-8 mb-2 text-xl text-white;
+  }
+  .prose-wicys p {
+    @apply my-4;
+  }
+  .prose-wicys a {
+    @apply text-wicys-green-300 underline decoration-wicys-green-400/40 underline-offset-2 hover:text-wicys-green-200;
+  }
+  .prose-wicys ul {
+    @apply my-4 list-disc space-y-1 pl-6;
+  }
+  .prose-wicys ol {
+    @apply my-4 list-decimal space-y-1 pl-6;
+  }
+  .prose-wicys blockquote {
+    @apply my-6 border-l-4 border-wicys-purple-400 pl-4 italic text-cream/70;
+  }
+  .prose-wicys code {
+    @apply rounded bg-ink-800 px-1.5 py-0.5 text-sm text-wicys-green-200;
+  }
+  .prose-wicys pre {
+    @apply my-6 overflow-x-auto rounded-xl border border-white/10 bg-ink-900 p-4 text-sm;
+  }
+  .prose-wicys pre code {
+    @apply bg-transparent p-0 text-cream/90;
+  }
+  .prose-wicys img {
+    @apply my-6 rounded-xl border border-white/10;
+  }
+}
+
+/* Thin, brand-colored scrollbar. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: theme('colors.ink.950');
+}
+::-webkit-scrollbar-thumb {
+  background: theme('colors.wicys.purple.700');
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.wicys.purple.600');
+}

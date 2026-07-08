@@ -1,0 +1,16 @@
+# Netlify deployment config for the WiCyS Northeastern Arlington site.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback: React Router handles routing client-side, so any path that
+# doesn't match a real file (e.g. /about, /events) must serve index.html.
+# Real files like /admin/index.html are served before this rule applies.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

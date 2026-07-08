@@ -1,0 +1,166 @@
+# ---------------------------------------------------------------------------
+# Decap CMS configuration for the WiCyS Northeastern site.
+# Chapter members edit newsletter posts and conference recaps at /admin.
+#
+# Backend: Netlify Git Gateway — after your first Netlify deploy, enable
+#   Identity + Git Gateway in the Netlify dashboard, then invite editors
+#   (Site settings → Identity). See README for the exact steps.
+#
+# Local editing (optional): set `local_backend: true` (already on below) and run
+#   `npx decap-server` in one terminal + `npm run dev` in another, then open
+#   http://localhost:5173/admin — edits write straight to your local files.
+# ---------------------------------------------------------------------------
+
+backend:
+  name: git-gateway
+  branch: main # change if your default branch is named differently
+
+# Allow editing against local files during development (harmless in production).
+local_backend: true
+
+# Draft → review → publish workflow.
+publish_mode: editorial_workflow
+
+# Uploaded images land in /public/images/uploads and are referenced as
+# /images/uploads/... (which is how they resolve on the live site).
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "newsletter"
+    label: "Newsletter Posts"
+    label_singular: "Newsletter Post"
+    folder: "content/newsletter"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Publish date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { name: "author", label: "Author", widget: "string", default: "WiCyS Northeastern" }
+      - {
+          name: "tags",
+          label: "Tags",
+          widget: "list",
+          required: false,
+          hint: "e.g. Events, Policy, Threats, CTF",
+        }
+      - {
+          name: "excerpt",
+          label: "Excerpt",
+          widget: "text",
+          hint: "1–2 sentence summary shown on cards.",
+        }
+      - { name: "coverImage", label: "Cover image", widget: "image", required: false }
+      - {
+          name: "featured",
+          label: "Feature on home page",
+          widget: "boolean",
+          default: false,
+          required: false,
+        }
+      - { name: "body", label: "Body", widget: "markdown" }
+
+  - name: "events"
+    label: "Events & Announcements"
+    label_singular: "Event"
+    folder: "content/events"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - {
+          name: "date",
+          label: "Event date",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+          hint: "Events on or after today show under “Upcoming”; earlier ones under “Past”.",
+        }
+      - {
+          name: "endDate",
+          label: "End date",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+          required: false,
+          hint: "Only for multi-day events.",
+        }
+      - {
+          name: "time",
+          label: "Time",
+          widget: "string",
+          required: false,
+          hint: "e.g. 5:30–7:00 PM",
+        }
+      - { name: "location", label: "Location", widget: "string", required: false }
+      - {
+          name: "tags",
+          label: "Tags",
+          widget: "list",
+          required: false,
+          hint: "e.g. Workshop, Social, CTF, Speaker",
+        }
+      - {
+          name: "excerpt",
+          label: "Short description",
+          widget: "text",
+          hint: "1–2 sentence summary shown on the event card.",
+        }
+      - {
+          name: "registrationUrl",
+          label: "Registration / RSVP link",
+          widget: "string",
+          required: false,
+          hint: "Shown as a button on upcoming events.",
+        }
+      - { name: "coverImage", label: "Cover image", widget: "image", required: false }
+      - { name: "body", label: "Details", widget: "markdown", required: false }
+
+  - name: "conferences"
+    label: "Conference Recaps"
+    label_singular: "Conference Recap"
+    folder: "content/conferences"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{conference}} — {{author}}"
+    sortable_fields: ["date", "conference"]
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - {
+          name: "conference",
+          label: "Conference",
+          widget: "string",
+          hint: "e.g. WiCyS 2025",
+        }
+      - { name: "date", label: "Date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { name: "location", label: "Location", widget: "string", required: false }
+      - { name: "author", label: "Member name", widget: "string" }
+      - {
+          name: "role",
+          label: "Role / year",
+          widget: "string",
+          required: false,
+          hint: "e.g. CS ’26, Chapter member",
+        }
+      - {
+          name: "coverImage",
+          label: "Cover photo",
+          widget: "image",
+          required: false,
+        }
+      - {
+          name: "gallery",
+          label: "Gallery photos",
+          widget: "list",
+          required: false,
+          field: { name: "image", label: "Photo", widget: "image" },
+        }
+      - {
+          name: "excerpt",
+          label: "Short quote / summary",
+          widget: "text",
+          required: false,
+        }
+      - { name: "body", label: "Experience", widget: "markdown" }
