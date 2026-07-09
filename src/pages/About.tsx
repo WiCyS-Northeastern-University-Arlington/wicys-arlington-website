@@ -8,7 +8,7 @@ import Button from '../components/ui/Button'
 const values = [
   {
     title: 'Recruit',
-    body: 'We welcome students of every major and skill level into cybersecurity — no prior experience needed.',
+    body: 'We welcome students of every major and skill level into cybersecurity - no prior experience needed.',
   },
   {
     title: 'Retain',
@@ -75,11 +75,11 @@ export default function About() {
                 Launched in {siteConfig.foundedYear} through {siteConfig.college}, our chapter
                 brings together women and gender-nonconforming folks interested in community and
                 knowledge sharing. From career prep and technical workshops to movie nights and
-                bracelet making, we make space for members to learn, connect, and grow.
+                capture the flag competitions, we make space for members to learn, connect, and grow.
               </p>
               <p>
-                Every spring, we encourage members to apply to attend the national WiCyS
-                conference — one of the largest gatherings of women in security in the world.
+                Every spring, we encourage members to apply to attend the main WiCyS
+                conference - one of the largest gatherings of women in security in the world.
               </p>
             </div>
           </MotionReveal>

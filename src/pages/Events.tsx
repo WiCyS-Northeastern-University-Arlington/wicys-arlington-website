@@ -16,7 +16,7 @@ export default function Events() {
             What's <span className="text-gradient">happening</span>
           </>
         }
-        subtitle="Workshops, socials, CTF nights, and speaker sessions. Here's what's coming up — and a look back at what we've done."
+        subtitle="Workshops, socials, CTF nights, and speaker sessions. Here's what's coming up - and a look back at what we've done."
       />
 
       {/* Upcoming ------------------------------------------------------- */}
@@ -24,7 +24,7 @@ export default function Events() {
         <SectionHeading
           eyebrow="Upcoming"
           title="Mark your calendar"
-          subtitle="Everyone's welcome — no experience required. Save your spot below."
+          subtitle="Everyone's welcome, no experience required. Save your spot below."
           className="mb-10"
         />
 

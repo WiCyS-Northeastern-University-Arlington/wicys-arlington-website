@@ -16,7 +16,7 @@ const HeroScene = lazy(() => import('../components/three/HeroScene'))
 const highlights = [
   {
     title: 'Technical workshops',
-    body: 'Hands-on sessions in CTFs, cloud security, threat hunting, and tooling — beginner-friendly, no experience required.',
+    body: 'Hands-on sessions in CTFs, cloud security, threat hunting, and tooling - beginner-friendly, no experience required.',
     icon: 'M9 3v18M15 3v18M3 9h18M3 15h18',
   },
   {
@@ -25,8 +25,8 @@ const highlights = [
     icon: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75',
   },
   {
-    title: 'The national conference',
-    body: 'We help members apply for scholarships to the annual WiCyS conference each spring — travel, talks, and thousands of peers.',
+    title: 'The annual WiCyS conference',
+    body: 'We help members apply for scholarships to the annual WiCyS conference each spring.',
     icon: 'M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z',
   },
   {
@@ -192,7 +192,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-white">Never miss an issue</h2>
               <p className="mt-3 text-cream/70">
                 Get our newsletter with the latest in cybersecurity events, policy, and chapter
-                happenings — straight to your inbox.
+                happenings straight to your inbox.
               </p>
             </div>
             <div className="relative">

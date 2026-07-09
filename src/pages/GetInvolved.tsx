@@ -10,7 +10,7 @@ import SubscribeForm from '../components/newsletter/SubscribeForm'
 const perks = [
   {
     title: 'Learn by doing',
-    body: 'Beginner-friendly workshops, CTF practice, and hands-on labs — build real skills employers want.',
+    body: 'Beginner-friendly workshops, CTF practice, and hands-on labs, build real skills employers want.',
   },
   {
     title: 'Meet your people',
@@ -29,7 +29,7 @@ const perks = [
 const faqs = [
   {
     q: 'Do I need cybersecurity experience?',
-    a: 'Not at all. We welcome all majors and skill levels — many members start with zero security background.',
+    a: 'Not at all. We welcome all majors and skill levels. Many members start with zero security background.',
   },
   {
     q: 'Who can join?',
@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: 'Is there a membership fee?',
-    a: 'Becoming a chapter member is completely free. To become an official WiCyS member, students pay a $20 annual fee, which unlocks extra national resources and opportunities. For more information, visit the WiCyS main site (wicys.org).',
+    a: 'Becoming a chapter member is completely free. To become an official WiCyS member, students pay a $20 annual fee, which unlocks extra resources and opportunities. For more information, visit wicys.org.',
   },
 ]
 
@@ -53,7 +53,7 @@ export default function GetInvolved() {
             Join <span className="text-gradient">{siteConfig.shortName}</span>
           </>
         }
-        subtitle="Become a member in a couple of minutes. All majors, all experience levels, all genders who support our mission — welcome."
+        subtitle="Become a member in a couple of minutes. All majors, all experience levels, all genders who support our mission are welcome."
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href={membershipFormUrl} size="lg">

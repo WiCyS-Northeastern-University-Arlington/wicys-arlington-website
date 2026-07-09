@@ -18,7 +18,7 @@ export default function Conferences() {
             Where we've been, <span className="text-gradient">together</span>
           </>
         }
-        subtitle="Photos and firsthand experiences from the WiCyS national conference and the events our members attend each year."
+        subtitle="Photos and first hand experiences from the WiCyS conference and the events our members attend each year."
       />
 
       {/* Photo gallery */}
