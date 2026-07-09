@@ -24,15 +24,15 @@ export interface StatItem {
 
 export const siteConfig = {
   chapterName: 'WiCyS Northeastern Arlington',
-  chapterFullName: 'Women in CyberSecurity — Northeastern University, Arlington',
+  chapterFullName: 'Women in CyberSecurity - Northeastern University, Arlington',
   shortName: 'NU WiCyS',
-  university: 'Northeastern University — Arlington',
+  university: 'Northeastern University - Arlington',
   college: 'Khoury College of Computer Sciences',
   foundedYear: 2025,
 
   tagline: 'A community of engagement, encouragement, and support for women in cybersecurity.',
   mission:
-    'We recruit, retain, and advance women and gender-nonconforming folks in cybersecurity — building a stronger, more diverse security community at Northeastern and beyond.',
+    'We recruit, retain, and advance women and gender-nonconforming folks in cybersecurity - building a stronger, more diverse security community at Northeastern and beyond.',
   membershipFormUrl: 'https://docs.google.com/forms/d/1GTYLpn55POqtMAiWQSuUZ0QPr9GoBjIRsgyCJ6MNBJs/viewform?edit_requested=true', // TODO: swap for Google Form URL
   membershipFormIsPlaceholder: true,
 

@@ -94,7 +94,7 @@ export default function About() {
                   ['Founded', String(siteConfig.foundedYear)],
                   ['Home', siteConfig.college],
                   ['University', siteConfig.university],
-                  ['Affiliation', 'National WiCyS chapter'],
+                  ['Affiliation', 'Women in CyberSecurity'],
                 ].map(([label, value]) => (
                   <div key={label} className="flex justify-between gap-4 border-b border-white/10 pb-3 last:border-0">
                     <dt className="text-sm text-cream/50">{label}</dt>

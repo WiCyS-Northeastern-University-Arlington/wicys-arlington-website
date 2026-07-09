@@ -34,7 +34,7 @@ export default function Newsletter() {
             <div>
               <h2 className="text-xl font-semibold text-white">Get it in your inbox</h2>
               <p className="mt-1 text-sm text-cream/65">
-                Subscribe for new issues — no spam, unsubscribe anytime.
+                Subscribe for new issues - no spam, unsubscribe anytime.
               </p>
             </div>
             <div className="w-full sm:max-w-md">

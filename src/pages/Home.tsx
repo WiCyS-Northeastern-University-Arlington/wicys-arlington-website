@@ -65,7 +65,7 @@ export default function Home() {
 
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream/75 sm:text-xl">
               {siteConfig.tagline} We recruit, retain, and advance women and gender-nonconforming
-              folks in cybersecurity — together.
+              folks in cybersecurity - together.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
@@ -113,7 +113,7 @@ export default function Home() {
             <Card className="p-8">
               <p className="text-lg leading-relaxed text-cream/80">
                 Launched in {siteConfig.foundedYear} through {siteConfig.college}, {siteConfig.shortName}{' '}
-                brings together students who are curious about security — whether you're reverse-engineering
+                brings together students who are curious about security - whether you're reverse-engineering
                 malware or writing your first line of Python.
               </p>
               <p className="mt-4 leading-relaxed text-cream/70">
