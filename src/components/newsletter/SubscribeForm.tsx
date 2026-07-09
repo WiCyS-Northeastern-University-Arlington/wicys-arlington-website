@@ -100,7 +100,7 @@ export default function SubscribeForm({ compact = false }: { compact?: boolean }
         <p className="mt-3 text-sm text-red-300">
           Something went wrong. (Note: the subscribe form only works on the deployed Netlify
           site, not in local dev.) Please try again or email {''}
-          <a href="mailto:nuwicys@northeastern.edu" className="underline">
+          <a href="mailto:wicysnuarlington@gmail.com" className="underline">
             us
           </a>
           .

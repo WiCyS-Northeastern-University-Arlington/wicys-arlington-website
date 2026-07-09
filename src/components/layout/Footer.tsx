@@ -46,7 +46,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="text-sm text-cream/70 transition-colors hover:text-wicys-green-300"
               >
-                National WiCyS
+                WiCyS
               </a>
             </li>
             <li>

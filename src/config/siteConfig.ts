@@ -37,7 +37,7 @@ export const siteConfig = {
   membershipFormIsPlaceholder: true,
 
   // Contact + socials -------------------------------------------------------
-  email: 'nuwicys@northeastern.edu', // TODO: confirm chapter email
+  email: 'wicysnuarlington@gmail.com', // TODO: confirm chapter email
   socials: [
     { label: 'Instagram', href: 'https://www.instagram.com/wicys_neuarlington/', icon: 'instagram' },
     {
@@ -55,7 +55,7 @@ export const siteConfig = {
   stats: [
     { value: 'Est. 2025', label: 'Founded at Northeastern Arlington' },
     { value: '100+', label: 'Members & allies' },
-    { value: 'Spring', label: 'Annual national WiCyS conference' },
+    { value: 'Spring', label: 'Annual WiCyS conference' },
     { value: 'All', label: 'Majors & experience levels welcome' },
   ] as StatItem[],
 
