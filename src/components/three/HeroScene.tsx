@@ -2,7 +2,6 @@ import { Suspense, useEffect, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import ParticleField from './ParticleField'
 
-/** Detects the user's reduced-motion preference (reactively). */
 function usePrefersReducedMotion() {
   const [reduced, setReduced] = useState(false)
   useEffect(() => {
@@ -26,8 +25,6 @@ function useIsSmallScreen() {
   }, [])
   return small
 }
-
-/** Static, dependency-free gradient shown when 3D is unavailable/undesired. */
 function StaticFallback() {
   return (
     <div className="absolute inset-0" aria-hidden="true">
@@ -37,10 +34,6 @@ function StaticFallback() {
   )
 }
 
-/**
- * Full-bleed animated hero background. Falls back to a static gradient when the
- * user prefers reduced motion or when WebGL fails to initialize.
- */
 export default function HeroScene() {
   const reduced = usePrefersReducedMotion()
   const small = useIsSmallScreen()

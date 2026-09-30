@@ -11,9 +11,6 @@ interface Props {
   animate?: boolean
 }
 
-/** Draws a single glyph (a "0" or "1") onto a canvas and returns it as a
- *  point-sprite texture. White glyph on transparent bg so the per-vertex
- *  brand color tints it and additive blending gives a soft "code rain" glow. */
 function makeDigitTexture(char: '0' | '1') {
   const size = 128
   const canvas = document.createElement('canvas')
@@ -31,7 +28,6 @@ function makeDigitTexture(char: '0' | '1') {
   return tex
 }
 
-/** One buffer-geometry point cloud rendered with a given digit sprite. */
 function DigitPoints({
   positions,
   colors,
@@ -61,16 +57,10 @@ function DigitPoints({
   )
 }
 
-/**
- * A slowly rotating cloud of brand-colored binary digits (0s and 1s) wrapped
- * around a wireframe icosahedron — a "secure network / community" motif. Pure
- * buffer geometry so it stays cheap on the GPU. Reacts subtly to pointer.
- */
 export default function ParticleField({ count = 900, animate = true }: Props) {
   const group = useRef<THREE.Group>(null)
   const { viewport } = useThree()
 
-  // One sprite texture per digit; disposed on unmount.
   const zeroTex = useMemo(() => makeDigitTexture('0'), [])
   const oneTex = useMemo(() => makeDigitTexture('1'), [])
   useEffect(() => {
@@ -80,8 +70,6 @@ export default function ParticleField({ count = 900, animate = true }: Props) {
     }
   }, [zeroTex, oneTex])
 
-  // Positions + per-vertex colors (purple → teal → green gradient by radius),
-  // split into two clouds: one rendered as "0", the other as "1".
   const { zeros, ones } = useMemo(() => {
     const p0: number[] = []
     const c0: number[] = []
@@ -89,7 +77,6 @@ export default function ParticleField({ count = 900, animate = true }: Props) {
     const c1: number[] = []
     const tmp = new THREE.Color()
     for (let i = 0; i < count; i++) {
-      // distribute in a spherical shell
       const r = 2.4 + Math.random() * 2.6
       const theta = Math.random() * Math.PI * 2
       const phi = Math.acos(2 * Math.random() - 1)
@@ -121,7 +108,7 @@ export default function ParticleField({ count = 900, animate = true }: Props) {
       group.current.rotation.y += delta * 0.06
       group.current.rotation.x += delta * 0.015
     }
-    // gentle pointer parallax
+  
     const targetX = (state.pointer.x * viewport.width) / 30
     const targetY = (state.pointer.y * viewport.height) / 30
     group.current.position.x += (targetX - group.current.position.x) * 0.03

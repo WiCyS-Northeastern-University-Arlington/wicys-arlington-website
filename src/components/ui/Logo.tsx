@@ -3,11 +3,6 @@ interface Props {
   withWordmark?: boolean
 }
 
-/**
- * Chapter logomark: a security shield with a keyhole, in the WiCyS
- * purple→green gradient. Placeholder mark — swap for the official WiCyS /
- * chapter logo asset when available (drop it in /public and reference here).
- */
 export default function Logo({ className = 'h-9 w-9', withWordmark = false }: Props) {
   return (
     <span className="inline-flex items-center gap-2.5">

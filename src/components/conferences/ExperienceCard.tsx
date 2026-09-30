@@ -4,7 +4,6 @@ import type { ConferenceRecap } from '../../lib/content'
 import { formatDate } from '../../lib/content'
 import Card from '../ui/Card'
 
-/** A member's conference experience: photo, meta, and their written recap. */
 export default function ExperienceCard({ recap }: { recap: ConferenceRecap }) {
   return (
     <Card className="overflow-hidden">

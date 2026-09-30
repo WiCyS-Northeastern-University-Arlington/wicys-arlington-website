@@ -8,7 +8,6 @@ interface Props {
   children?: ReactNode
 }
 
-/** Compact hero band used at the top of interior pages. */
 export default function PageHero({ eyebrow, title, subtitle, children }: Props) {
   return (
     <section className="relative overflow-hidden pt-28 pb-14 sm:pt-32 sm:pb-16">

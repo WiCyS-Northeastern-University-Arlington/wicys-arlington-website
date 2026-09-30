@@ -1,28 +1,10 @@
-# ---------------------------------------------------------------------------
-# Decap CMS configuration for the WiCyS Northeastern site.
-# Chapter members edit newsletter posts and conference recaps at /admin.
-#
-# Backend: Netlify Git Gateway — after your first Netlify deploy, enable
-#   Identity + Git Gateway in the Netlify dashboard, then invite editors
-#   (Site settings → Identity). See README for the exact steps.
-#
-# Local editing (optional): set `local_backend: true` (already on below) and run
-#   `npx decap-server` in one terminal + `npm run dev` in another, then open
-#   http://localhost:5173/admin — edits write straight to your local files.
-# ---------------------------------------------------------------------------
-
 backend:
   name: git-gateway
-  branch: main # change if your default branch is named differently
+  branch: main 
 
-# Allow editing against local files during development (harmless in production).
 local_backend: true
-
-# Draft → review → publish workflow.
 publish_mode: editorial_workflow
 
-# Uploaded images land in /public/images/uploads and are referenced as
-# /images/uploads/... (which is how they resolve on the live site).
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 

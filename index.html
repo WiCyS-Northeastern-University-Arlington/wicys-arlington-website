@@ -21,30 +21,10 @@
     />
     <meta property="og:image" content="/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
-
-    <!--
-      Netlify Forms detection.
-      Netlify's build bots scan the deployed HTML for forms. Because this is a
-      client-rendered SPA, we register the "newsletter" form here as a hidden,
-      static HTML form so Netlify knows it exists. The real, interactive form in
-      the React app posts to this same form name.
-    -->
-    <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
-      <input type="email" name="email" />
-      <input type="text" name="name" />
-      <input type="text" name="bot-field" />
-    </form>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-
-    <!--
-      Netlify Identity redirect helper for Decap CMS. When someone opens a CMS
-      invite / password-recovery / confirmation link, the token arrives in the
-      URL hash. Only then do we load the Identity widget and forward them to the
-      /admin login. Normal visitors never load this external script.
-    -->
     <script>
       (function () {
         var hash = window.location.hash || ''

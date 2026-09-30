@@ -4,33 +4,20 @@ import Button from '../ui/Button'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
-/** URL-encode a form body for the Netlify Forms endpoint. */
-function encode(data: Record<string, string>) {
-  return Object.keys(data)
-    .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
-    .join('&')
-}
-
-/**
- * Email signup that posts to Netlify Forms (form name "newsletter", which is
- * registered as a hidden static form in index.html so Netlify detects it).
- * Submissions appear in the Netlify dashboard under Forms; from there you can
- * forward them to Mailchimp/email. Works only on the deployed Netlify site —
- * in local dev the POST 404s and we surface a friendly note.
- */
 export default function SubscribeForm({ compact = false }: { compact?: boolean }) {
   const [status, setStatus] = useState<Status>('idle')
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
+  const [botField, setBotField] = useState('')
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setStatus('submitting')
     try {
-      const res = await fetch('/', {
+      const res = await fetch('/.netlify/functions/subscribe', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'newsletter', name, email, 'bot-field': '' }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, name, botField }),
       })
       if (!res.ok) throw new Error(`Bad status ${res.status}`)
       setStatus('success')
@@ -53,19 +40,18 @@ export default function SubscribeForm({ compact = false }: { compact?: boolean }
   }
 
   return (
-    <form
-      name="newsletter"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      onSubmit={handleSubmit}
-      className="w-full"
-    >
-      {/* Netlify hidden inputs */}
-      <input type="hidden" name="form-name" value="newsletter" />
+    <form onSubmit={handleSubmit} className="w-full">
+      {/* Honeypot: hidden from real users; bots that fill it are dropped server-side. */}
       <p hidden>
         <label>
-          Don’t fill this out: <input name="bot-field" />
+          Don’t fill this out:{' '}
+          <input
+            name="bot-field"
+            tabIndex={-1}
+            autoComplete="off"
+            value={botField}
+            onChange={(e) => setBotField(e.target.value)}
+          />
         </label>
       </p>
 
@@ -98,8 +84,8 @@ export default function SubscribeForm({ compact = false }: { compact?: boolean }
 
       {status === 'error' && (
         <p className="mt-3 text-sm text-red-300">
-          Something went wrong. (Note: the subscribe form only works on the deployed Netlify
-          site, not in local dev.) Please try again or email {''}
+          Something went wrong. (Note: the subscribe form needs the deployed Netlify site or
+          `netlify dev` — it won’t work under plain `vite`.) Please try again or email {''}
           <a href="mailto:wicysnuarlington@gmail.com" className="underline">
             us
           </a>

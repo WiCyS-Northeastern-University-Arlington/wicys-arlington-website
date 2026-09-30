@@ -7,6 +7,11 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Serverless functions (the newsletter subscribe endpoint lives here).
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 # SPA fallback: React Router handles routing client-side, so any path that
 # doesn't match a real file (e.g. /about, /events) must serve index.html.
 # Real files like /admin/index.html are served before this rule applies.

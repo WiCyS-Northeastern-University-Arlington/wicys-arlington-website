@@ -10,7 +10,6 @@ import MotionReveal from '../components/ui/MotionReveal'
 import ArticleCard from '../components/newsletter/ArticleCard'
 import SubscribeForm from '../components/newsletter/SubscribeForm'
 
-// The 3D scene is heavy — load it lazily so it never blocks first paint.
 const HeroScene = lazy(() => import('../components/three/HeroScene'))
 
 const highlights = [

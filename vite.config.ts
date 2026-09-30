@@ -5,7 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    // Split the heavy Three.js bundle out so the rest of the app loads fast.
     rollupOptions: {
       output: {
         manualChunks: {

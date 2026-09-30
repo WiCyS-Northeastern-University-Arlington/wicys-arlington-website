@@ -1,10 +1,3 @@
-/**
- * ============================================================================
- *  SITE CONFIG — the single place to edit chapter-wide values.
- *  Update these and the whole site follows. No component code changes needed.
- * ============================================================================
- */
-
 export interface NavLink {
   label: string
   to: string
@@ -37,7 +30,7 @@ export const siteConfig = {
   membershipFormIsPlaceholder: true,
 
   // Contact + socials -------------------------------------------------------
-  email: 'wicysnuarlington@gmail.com', // TODO: confirm chapter email
+  email: 'wicysnuarlington@gmail.com', 
   socials: [
     { label: 'Instagram', href: 'https://www.instagram.com/wicys_neuarlington/', icon: 'instagram' },
     {
@@ -48,10 +41,10 @@ export const siteConfig = {
     { label: 'Email', href: 'mailto:wicysnuarlington@gmail.com', icon: 'email' },
   ] as SocialLink[],
 
-  // National org -----------------------------------------------------------
+ 
   nationalUrl: 'https://www.wicys.org/',
 
-  // Headline stats shown on the Home page (edit freely) ---------------------
+
   stats: [
     { value: 'Est. 2025', label: 'Founded at Northeastern Arlington' },
     { value: '100+', label: 'Members & allies' },
@@ -59,7 +52,6 @@ export const siteConfig = {
     { value: 'All', label: 'Majors & experience levels welcome' },
   ] as StatItem[],
 
-  // Primary navigation ------------------------------------------------------
   nav: [
     { label: 'Home', to: '/' },
     { label: 'About', to: '/about' },

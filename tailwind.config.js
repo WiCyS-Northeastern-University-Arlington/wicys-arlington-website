@@ -1,14 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
-// ---------------------------------------------------------------------------
-// WiCyS brand palette.
-// WiCyS's brand identity is purple + green/teal ("Purple and Green" honor cord,
-// signature 💜). The exact official hex codes live behind a password-protected
-// affiliate portal, so the values below are careful approximations. They are
-// the SINGLE source of truth for brand color — if you gain access to the
-// official WiCyS Global Branding Guidelines, update these values and the whole
-// site re-themes.
-// ---------------------------------------------------------------------------
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',

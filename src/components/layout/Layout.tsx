@@ -3,8 +3,6 @@ import { useLocation } from 'react-router-dom'
 import type { ReactNode } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
-
-/** Scrolls to the top of the page whenever the route changes. */
 function ScrollToTop() {
   const { pathname } = useLocation()
   useEffect(() => {

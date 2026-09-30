@@ -3,7 +3,6 @@ import type { ReactNode } from 'react'
 interface Props {
   children: ReactNode
   className?: string
-  /** Adds a hover lift + glow. Use for interactive/linked cards. */
   interactive?: boolean
 }
 

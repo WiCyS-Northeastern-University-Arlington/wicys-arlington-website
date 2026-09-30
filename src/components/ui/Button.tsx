@@ -33,7 +33,6 @@ type ButtonProps =
       href: string
       to?: never
       onClick?: never
-      /** External links open in a new tab by default. */
       newTab?: boolean
     })
   | (CommonProps & {

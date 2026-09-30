@@ -6,7 +6,6 @@ import Button from '../ui/Button'
 
 interface Props {
   event: EventItem
-  /** Upcoming events get the accent badge + RSVP button; past ones read muted. */
   upcoming?: boolean
 }
 
