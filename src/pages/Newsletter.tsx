@@ -70,13 +70,9 @@ export default function Newsletter() {
           </div>
         ) : (
           <Card className="p-12 text-center">
-            <p className="text-lg text-white">No articles yet{activeTag ? ` tagged “${activeTag}”` : ''}.</p>
+            <p className="text-lg text-white">{activeTag ? `No articles tagged “${activeTag}” yet.` : 'Newsletter coming soon'}</p>
             <p className="mt-2 text-sm text-cream/60">
-              New issues are published through our{' '}
-              <a href="/admin" className="text-wicys-green-300 underline">
-                editor
-              </a>
-              . Check back soon!
+              Check back soon for cybersecurity news, chapter updates, and our first issue.
             </p>
           </Card>
         )}

@@ -110,3 +110,12 @@
 ::-webkit-scrollbar-thumb:hover {
   background: theme('colors.wicys.purple.600');
 }
+
+.cyai-orbits { perspective: 700px; transform-style: preserve-3d; }
+.cyai-orbit { position: absolute; inset: 0; border: 1px solid; border-radius: 50%; transform-style: preserve-3d; animation: cyai-orbit-turn 24s linear infinite; animation-play-state: var(--cyai-play, running); }
+.cyai-orbit-cy { color: #5eead4; border-color: #5eead455; --orbit-x: 65deg; --orbit-y: -25deg; box-shadow: 0 0 20px #5eead415; }
+.cyai-orbit-ai { color: #c4b5fd; border-color: #c4b5fd66; --orbit-x: -55deg; --orbit-y: 35deg; animation-direction: reverse; animation-duration: 30s; }
+.cyai-orbit-shared { inset: -20px; color: #fda4af; border-color: #fda4af33; --orbit-x: 25deg; --orbit-y: 60deg; animation-duration: 36s; }
+.cyai-orbit span { position: absolute; top: 50%; left: -5px; width: 10px; height: 10px; border-radius: 50%; background: currentColor; box-shadow: 0 0 18px 4px currentColor; }
+@keyframes cyai-orbit-turn { from { transform: rotateX(var(--orbit-x)) rotateY(var(--orbit-y)) rotateZ(0deg); } to { transform: rotateX(var(--orbit-x)) rotateY(var(--orbit-y)) rotateZ(360deg); } }
+@media (prefers-reduced-motion: reduce) { .cyai-orbit { animation: none; transform: rotateX(var(--orbit-x)) rotateY(var(--orbit-y)); } }

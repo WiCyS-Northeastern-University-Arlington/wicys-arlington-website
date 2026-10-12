@@ -2,12 +2,12 @@ import { Suspense, lazy } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { siteConfig } from '../config/siteConfig'
-import { newsletterPosts } from '../lib/content'
+import { facultyResearch } from '../lib/content'
 import Button from '../components/ui/Button'
 import Card from '../components/ui/Card'
 import SectionHeading from '../components/ui/SectionHeading'
 import MotionReveal from '../components/ui/MotionReveal'
-import ArticleCard from '../components/newsletter/ArticleCard'
+import ResearchCard from '../components/research/ResearchCard'
 import SubscribeForm from '../components/newsletter/SubscribeForm'
 
 const HeroScene = lazy(() => import('../components/three/HeroScene'))
@@ -36,7 +36,7 @@ const highlights = [
 ]
 
 export default function Home() {
-  const latest = newsletterPosts.slice(0, 3)
+  const cyai = facultyResearch.find((item) => item.slug === 'cyai')
 
   return (
     <>
@@ -154,30 +154,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ----------------------------------------------------- LATEST NEWSLETTER */}
-      {latest.length > 0 && (
+      {/* Latest research */}
+      {cyai && (
         <section className="container-page py-16 sm:py-20">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading
-              eyebrow="From the newsletter"
+              eyebrow="From our research"
               title="Latest from our desk"
-              subtitle="Recent cyber events and how policy is shaping the field."
+              subtitle="Explore CyAI, Dr. Elizabeth Hawthorne’s research on cybersecurity and artificial intelligence."
             />
             <Link
-              to="/newsletter"
+              to="/research"
               className="hidden shrink-0 items-center gap-1 text-sm font-medium text-wicys-green-300 hover:text-wicys-green-200 sm:inline-flex"
             >
-              View all
+              View research
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
             </Link>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {latest.map((post) => (
-              <ArticleCard key={post.slug} post={post} />
-            ))}
+          <div className="mt-10 max-w-2xl">
+            <MotionReveal>
+              <ResearchCard item={cyai} />
+            </MotionReveal>
           </div>
         </section>
       )}

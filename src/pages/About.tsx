@@ -1,9 +1,11 @@
+import { lazy, Suspense } from 'react'
 import { siteConfig } from '../config/siteConfig'
 import PageHero from '../components/layout/PageHero'
 import SectionHeading from '../components/ui/SectionHeading'
 import Card from '../components/ui/Card'
 import MotionReveal from '../components/ui/MotionReveal'
 import Button from '../components/ui/Button'
+const CyberGlobe = lazy(() => import('../components/three/CyberGlobe'))
 
 const values = [
   {
@@ -21,20 +23,49 @@ const values = [
 ]
 
 // Faculty advisor — featured separately with a star to show she's special.
-const advisor = {
+// To add a photo, put the image in public/images/board/ and set `photo` to its path.
+const advisor: BoardMember = {
   name: 'Elizabeth (Beth) Hawthorne',
   role: 'Faculty Advisor',
   initial: 'B',
+  photo: '/images/board/beth-hawthorne.jpg',
 }
 
-// Student board — replace the placeholder names with real officers as the roster changes.
-const board = [
-  { name: 'President', role: 'President', initial: 'P' },
-  { name: 'Vice President', role: 'Vice President', initial: 'V' },
-  { name: 'Treasurer', role: 'Treasurer', initial: 'T' },
-  { name: 'Secretary', role: 'Secretary', initial: 'S' },
-  { name: 'Media Lead', role: 'Media Lead', initial: 'M' },
+// Student board — photos go in public/images/board/, e.g. photo: '/images/board/mercy.jpg'.
+// Leave `photo` empty to show the initial instead.
+const board: BoardMember[] = [
+  { name: 'Mercy Akinwunmi', role: 'President', initial: 'M', photo: '/images/board/mercy-akinwunmi.jpg' },
+  { name: 'Janani Amuthasekaran', role: 'Vice President', initial: 'J', photo: '/images/board/janani-amuthasekaran.jpg' },
+  { name: 'Uryaswi Bhowmick', role: 'Secretary', initial: 'U', photo: '/images/board/uryaswi-bhowmick.jpg' },
+  { name: 'Raissa Bakari', role: 'Communication and Media Lead', initial: 'R', photo: '/images/board/raissa-bakari.jpg' },
 ]
+
+interface BoardMember {
+  name: string
+  role: string
+  initial: string
+  photo?: string
+}
+
+/** Round headshot, falling back to the member's initial when there's no photo. */
+function Avatar({ member, className }: { member: BoardMember; className: string }) {
+  return (
+    <div
+      className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-wicys-gradient font-bold text-white ${className}`}
+    >
+      {member.photo ? (
+        <img
+          src={member.photo}
+          alt={member.name}
+          loading="lazy"
+          className="h-full w-full object-contain object-center"
+        />
+      ) : (
+        member.initial
+      )}
+    </div>
+  )
+}
 
 /** Small gold star used to mark the faculty advisor. */
 function StarIcon({ className = 'h-4 w-4' }: { className?: string }) {
@@ -60,7 +91,7 @@ export default function About() {
 
       {/* Story */}
       <section className="container-page py-8 sm:py-12">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr]">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
           <MotionReveal>
             <div className="prose-wicys text-lg">
               <p>
@@ -84,25 +115,13 @@ export default function About() {
             </div>
           </MotionReveal>
 
-          <MotionReveal delay={0.1}>
-            <Card className="p-8">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-wicys-green-300">
-                At a glance
-              </h3>
-              <dl className="mt-5 space-y-4">
-                {[
-                  ['Founded', String(siteConfig.foundedYear)],
-                  ['Home', siteConfig.college],
-                  ['University', siteConfig.university],
-                  ['Affiliation', 'Women in CyberSecurity'],
-                ].map(([label, value]) => (
-                  <div key={label} className="flex justify-between gap-4 border-b border-white/10 pb-3 last:border-0">
-                    <dt className="text-sm text-cream/50">{label}</dt>
-                    <dd className="text-right text-sm font-medium text-white">{value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </Card>
+          <MotionReveal delay={0.1} className="w-full">
+            <div className="relative mx-auto aspect-square w-full max-w-sm lg:max-w-none" role="img" aria-label="Interactive globe showing cybersecurity attacks and defenses">
+              <div className="pointer-events-none absolute inset-[12%] rounded-full bg-wicys-gradient opacity-20 blur-3xl" />
+              <Suspense fallback={null}>
+                <CyberGlobe />
+              </Suspense>
+            </div>
           </MotionReveal>
         </div>
       </section>
@@ -156,8 +175,8 @@ export default function About() {
             <span className="relative inline-flex items-center gap-1.5 rounded-full border border-amber-300/40 bg-amber-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-amber-200">
               <StarIcon className="h-3.5 w-3.5" /> Faculty Advisor
             </span>
-            <div className="relative mx-auto mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-wicys-gradient text-3xl font-bold text-white shadow-glow-green">
-              {advisor.initial}
+            <div className="relative mx-auto mt-5 h-24 w-24">
+              <Avatar member={advisor} className="h-24 w-24 text-3xl shadow-glow-green" />
               <span className="absolute -right-1 -top-1 flex h-8 w-8 items-center justify-center rounded-full bg-amber-300 text-ink-900 shadow-lg">
                 <StarIcon className="h-4 w-4" />
               </span>
@@ -168,13 +187,11 @@ export default function About() {
         </MotionReveal>
 
         {/* Student officers */}
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {board.map((member, i) => (
             <MotionReveal key={member.role} delay={i * 0.06}>
               <Card interactive className="h-full p-6 text-center">
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-wicys-gradient text-2xl font-bold text-white">
-                  {member.initial}
-                </div>
+                <Avatar member={member} className="mx-auto h-20 w-20 text-2xl" />
                 <h3 className="mt-4 font-semibold text-white">{member.name}</h3>
                 <p className="text-sm text-wicys-green-300">{member.role}</p>
               </Card>

@@ -1,0 +1,461 @@
+[
+  {
+    "id": "cyber-independent",
+    "label": "Cybersecurity foundations",
+    "description": "Cybersecurity on its own",
+    "total": 67,
+    "source": "CyAI-PAPER-cyber-independent-clusters-competencies.xlsx",
+    "entries": [
+      {
+        "title": "Cybersecurity Foundations & Core Principles",
+        "statement": "Study foundational concepts and core cybersecurity principles of confidentiality, integrity, availability, and non-repudiation along with risk assessment, access control, and mitigation techniques.",
+        "sources": "S019; S022; S024",
+        "count": 8
+      },
+      {
+        "title": "Threat Landscape & Adversary Knowledge",
+        "statement": "Evaluate the cyber threat landscape, including motivations of adversaries, known vulnerabilities, data exfiltration tools and techniques, and types of cyber attacks.",
+        "sources": "S001; S019; S022; S024",
+        "count": 5
+      },
+      {
+        "title": "Vulnerability Knowledge, Discovery & Assessment",
+        "statement": "Discover and assess the types of weaknesses and their severity in computing systems , including cybersecurity vulnerabilities, common application vulnerabilities, and system vulnerabilities.",
+        "sources": "S001; S009; S019; S022",
+        "count": 6
+      },
+      {
+        "title": "Emerging Risks & Threat Currency",
+        "statement": "Prioritize the landscape between current and emerging risks and threats.",
+        "sources": "S019; S024",
+        "count": 2
+      },
+      {
+        "title": "Offensive Security & Penetration Testing",
+        "statement": "Simulate offensive cybersecurity through penetration testing and vulnerability exploitation.",
+        "sources": "S001; S009; S011",
+        "count": 2
+      },
+      {
+        "title": "Security Monitoring, Detection & Threat Analysis",
+        "statement": "Implement network monitoring, security assessment, and threat intelligence analysis, including intrusion detection and protection systems, unified threat management, and data collection and correlation using SIEM and SOAR technologies.",
+        "sources": "S001; S009; S011; S019",
+        "count": 11
+      },
+      {
+        "title": "Incident Response & Digital Forensics",
+        "statement": "Apply digital forensics and incident response (DFIR) knowledge and skills to cybersecurity breaches.",
+        "sources": "S001; S009; S011",
+        "count": 3
+      },
+      {
+        "title": "Identity & Access Management",
+        "statement": "Implement identity and access managment (IAM) principles and practices, including least privilege access controls, identity-centric security, and continuous authentication and authorization.",
+        "sources": "S009; S011; S019; S022",
+        "count": 5
+      },
+      {
+        "title": "Network, Infrastructure & Architecture Security",
+        "statement": "Implement technical protocols and controls for architectural, infrastructure, and network-level defense, such as zero trust architectures, and operational security for industrial control systems.",
+        "sources": "S009; S011; S024",
+        "count": 4
+      },
+      {
+        "title": "Cloud Security",
+        "statement": "Apply cloud computing protection mechanisms, such as configuration management, encryption, obfuscation, and tokenization, to secure cloud architecture and deployment environments.",
+        "sources": "S009; S011",
+        "count": 5
+      },
+      {
+        "title": "Data Protection & Data Security Controls",
+        "statement": "Implement data protection mechanisms, including data security controls, data classification standards, and data integrity practices.",
+        "sources": "S009; S019",
+        "count": 4
+      },
+      {
+        "title": "Secure Software Development & Application Security",
+        "statement": "Use DevSecOps practices to develop secure applications and software, including secure coding tools, bounds checking, input validation, error handling, and security testing.",
+        "sources": "S009; S011; S019; S022; S024",
+        "count": 6
+      },
+      {
+        "title": "Protective Controls, System Hardening & Security Engineering",
+        "statement": "Apply security engineering principles and controls, including extended detection and response of endpoints to harden computing systems against cyber attacks across networks and applications.",
+        "sources": "S009; S011; S022",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "id": "ai-independent",
+    "label": "AI foundations",
+    "description": "Artificial intelligence on its own",
+    "total": 105,
+    "source": "CyAI-PAPER-ai-independent-clusters-competencies.xlsx",
+    "entries": [
+      {
+        "title": "AI/ML Foundations & Core Principles",
+        "statement": "Study AI concepts, principles, techniques, and tools relevant to the AI system development lifecycle, including deep learning and generative and agentic AI systems.",
+        "sources": "S011; S019; S022; S024",
+        "count": 11
+      },
+      {
+        "title": "Emerging Trends & Continuous Learning",
+        "statement": "Research emerging AI trends, use cases, and practices to stay up to date in the computing fast-moving scientific and technology fields.",
+        "sources": "S024",
+        "count": 2
+      },
+      {
+        "title": "AI algorithms and methods",
+        "statement": "Select and anlyze use case suitability of AI algorithms and methods from either classical AI  problem-solving paradigms (e.g., optimization search) or learnig paradigms (e.g., supervised fine-tuning), or both.",
+        "sources": "S022; S024",
+        "count": 8
+      },
+      {
+        "title": "Model Development & Training",
+        "statement": "Design, develop, and validate end-to-end AI models , including training pipeline, refinforcement learning loop, and supervised fine-tuning, and synthetic data generation.",
+        "sources": "S019; S022; S024",
+        "count": 9
+      },
+      {
+        "title": "Model Selection & Optimization",
+        "statement": "Apply task requirements, selection criteria, and trade-offs evaluation to decide on the choice of model and its configuration, including data pipelines, hyperparameters, and hardware targets (e.g., GPUs, TPUs).",
+        "sources": "S022",
+        "count": 6
+      },
+      {
+        "title": "Model Evaluation & Performance Metrics",
+        "statement": "Measure how well a AI model performs using metrics and appropriate evaluation methods of the model's predictive power, including accuracy, robustness, and generalizability.",
+        "sources": "S019; S022; S024",
+        "count": 10
+      },
+      {
+        "title": "Data Management & Quality",
+        "statement": "Manage data quality required for AI systems, including best practices for data acquisition, collection, and curation.",
+        "sources": "S022; S024",
+        "count": 2
+      },
+      {
+        "title": "AI Infrastructure & Deployment",
+        "statement": "Design and operate deployment environments and production infrastructure for the AI system lifecycle, including sustainability considerations.",
+        "sources": "S024",
+        "count": 6
+      },
+      {
+        "title": "Generative AI",
+        "statement": "Work effectively with generative AI and agentic AI by writing structured instructions and designing workflows with human-in-the-lead proactive supervision to allow agents to subdivide goals and self-correct and use external tools, databases, and orchestration.",
+        "sources": "S019",
+        "count": 2
+      },
+      {
+        "title": "Agentic AI",
+        "statement": "Perform integrity checks on AI agent memories",
+        "sources": "S026",
+        "count": 1
+      },
+      {
+        "title": "Human-AI Interaction & UX",
+        "statement": "Design and test human-AI interaction, including conversational prototyping, transparency and explainability, and agency and control balancing.",
+        "sources": "S019; S024",
+        "count": 3
+      },
+      {
+        "title": "AI Risk Management & Assessment",
+        "statement": "Manage AI risk mitigation through measuring metrics and methods, performing risk assessments on applications, and developing mitigation strategies.",
+        "sources": "S019; S024",
+        "count": 9
+      },
+      {
+        "title": "AI Test, Evaluation, Verification & Validation",
+        "statement": "Test, verify, and validate AI systems, including testing infrastructures and translating operational requirements into testing components across scenarios.",
+        "sources": "S022 S024",
+        "count": 17
+      },
+      {
+        "title": "Bias, Fairness, Explainability & Reliability",
+        "statement": "Detect AI errors, test for bias in datasets and outputs, and evaluate AI model explainability and impact of data quality on those models.",
+        "sources": "S019; S022; S024",
+        "count": 10
+      },
+      {
+        "title": "AI Assurance, Documentation & Lessons Learned",
+        "statement": "Document assurance cases that meet stakeholders' needs, AI design and development activities, and failure modes of AI systems.",
+        "sources": "S024",
+        "count": 3
+      },
+      {
+        "title": "AI Application, Use-Case & Business Alignment",
+        "statement": "Determine AI projects based on organizational needs and viable use cases, including business-process knowledge, priorities, and gaps.",
+        "sources": "S022; S024",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "id": "cyber-coupled",
+    "label": "CY → AI",
+    "description": "Using cybersecurity to secure AI",
+    "total": 61,
+    "source": "CyAI-PAPER-cyber-coupled-clusters-competencies.xlsx",
+    "entries": [
+      {
+        "title": "Secure AI Lifecycle",
+        "statement": "Apply secure AI lifecycle techniques, including risk assessment, security requirements, threat modeling, and testing to maintain confidentiality, integrity, and availability of AI systems.",
+        "sources": "S022",
+        "count": 10,
+        "note": "",
+        "support": ""
+      },
+      {
+        "title": "Secure AI Models",
+        "statement": "Implement access control and authentation mechansims for AI models and data, including meta data registries and user identify verification",
+        "sources": "S026",
+        "count": 5,
+        "note": "",
+        "support": ""
+      },
+      {
+        "title": "Privacy of AI Data",
+        "statement": "Protect data integrity and privacy of AI systems, including protective health information (PHI) and personal identifiable information (PII)",
+        "sources": "S011, S024",
+        "count": 3,
+        "note": "",
+        "support": ""
+      },
+      {
+        "title": "Encryption of AI Data & Models",
+        "statement": "Apply cryptographic confidentiality and integrity control mechanisms for AI data and models.",
+        "sources": "S026",
+        "count": 1,
+        "note": "",
+        "support": ""
+      },
+      {
+        "title": "Defense of AI Training Data",
+        "statement": "Defend against data poisioning attacks of AI training data.",
+        "sources": "S019, S026",
+        "count": 3,
+        "note": "",
+        "support": ""
+      },
+      {
+        "title": "Managing AI security Risks",
+        "statement": "Manage AI organizational security risks, threats, vulnerabilities, and mitigation solutions, including disinformation and deepfake threats",
+        "sources": "S011, S019, S024, S026",
+        "count": 6,
+        "note": "",
+        "support": ""
+      },
+      {
+        "title": "Defense of AI Reconnaissance",
+        "statement": "Defend against AI inference denial and reconaissance extraction to prevent resource exhaustion and assets exposure.",
+        "sources": "S026",
+        "count": 4,
+        "note": "",
+        "support": ""
+      },
+      {
+        "title": "Prevention of AI Malicous Code",
+        "statement": "Scan AI software and its dependencies, and prevent malicious code vulnerabilities by restricting library loading of untrusted code and verifying code signature",
+        "sources": "S026",
+        "count": 4,
+        "note": "",
+        "support": ""
+      },
+      {
+        "title": "Monitoring AI Systems",
+        "statement": "Implement telemetry logging and monitoring techniques for auditing AI systems and agents to track data access, tool use, and user identities.",
+        "sources": "S026",
+        "count": 2,
+        "note": "",
+        "support": ""
+      },
+      {
+        "title": "Secure AI Infrastructure",
+        "statement": "Secure AI deployment architectures and AI infrastructure",
+        "sources": "S011, S026",
+        "count": 3,
+        "note": "",
+        "support": ""
+      },
+      {
+        "title": "Secure AI Operations",
+        "statement": "Secure AI operations, including best practices of threat intelligence, detection, investigation, and response",
+        "sources": "S009",
+        "count": 2,
+        "note": "",
+        "support": ""
+      },
+      {
+        "title": "Auditing Secure AI",
+        "statement": "Assess the security, integrity, and compliance of AI systems through continous review and auditing",
+        "sources": "S011, S022, S024",
+        "count": 4,
+        "note": "",
+        "support": ""
+      },
+      {
+        "title": "Secure AI Supply Chain",
+        "statement": "Verify AI provenance, trust, and integrity across the supply chain of AI compenents to reduce risks, including cryptographic checksums and the AI bill of materials (AIBOM)",
+        "sources": "S026",
+        "count": 5,
+        "note": "",
+        "support": ""
+      },
+      {
+        "title": "Permissioning AI Agent",
+        "statement": "Configure least-privilege permissions and lifecycle scoping for various AI agents, including single-user AI agents and shared AI-agent tools.",
+        "sources": "S026",
+        "count": 3,
+        "note": "",
+        "support": ""
+      },
+      {
+        "title": "Human Oversight & Secure AI Agents",
+        "statement": "Apply AI agent runtime security, including runtime safeguards, human-in-the-loop approval of agent actions, authentication for agent memory updates, isolating or sandboxing agent components, and agent tool inputs and outputs validation.",
+        "sources": "S026",
+        "count": 4,
+        "note": "",
+        "support": ""
+      }
+    ]
+  },
+  {
+    "id": "ai-coupled",
+    "label": "AI → CY",
+    "description": "Using AI to strengthen cybersecurity",
+    "total": 31,
+    "source": "CyAI-PAPER-ai-coupled-clusters-competencies.xlsx",
+    "entries": [
+      {
+        "title": "AI-enabled Security Foundations",
+        "statement": "Study the foundations of AI applied to cybersecurity.",
+        "sources": "S019, S022",
+        "count": 6,
+        "note": "Contributing",
+        "support": ""
+      },
+      {
+        "title": "AI-enabled Adversarial Robustness",
+        "statement": "Apply AI-integrity techniques to make models robust and resistant to adversarial attacks.",
+        "sources": "S026",
+        "count": 5,
+        "note": "Contributing twice",
+        "support": ""
+      },
+      {
+        "title": "AI-enabled Threat Modeling",
+        "statement": "Apply AI for threat modeling, risk management, and vulnerability assessment, including the design of mitigation techniques.",
+        "sources": "S011, S022",
+        "count": 4,
+        "note": "Contributing to \"AI Offensive Operations\"",
+        "support": ""
+      },
+      {
+        "title": "AI-enabled Security Operations",
+        "statement": "Apply AI techniques and tools to augment and automate security processes and defensive operations.",
+        "sources": "S011, S022",
+        "count": 3,
+        "note": "Contributing",
+        "support": ""
+      },
+      {
+        "title": "AI-enabled Defensive Tools",
+        "statement": "Assess and assure that AI tools are suitable for cybersecurity solutions based on their effectivenss, robustness, reliability, and trustworthiness.",
+        "sources": "S022, S024",
+        "count": 4,
+        "note": "Contributing",
+        "support": ""
+      },
+      {
+        "title": "AI-enabled Offensive Attacks",
+        "statement": "Simulate and assess AI-enabled cyber offensive operations (offensive AI), including tatics, techniques, and procedures, such as penetration testing, vulnerability discover, and reconnaissance.",
+        "sources": "S022",
+        "count": 5,
+        "note": "MOVED to CyAI Convergent",
+        "support": ""
+      },
+      {
+        "title": "AI Security Risks & Requirements",
+        "statement": "Assess project-level and organizational technical risks across the secure AI development lifecycle.",
+        "sources": "S024",
+        "count": 1,
+        "note": "",
+        "support": ""
+      }
+    ]
+  },
+  {
+    "id": "cyai-integrated",
+    "label": "CyAI convergence",
+    "description": "Competencies that bring both fields together",
+    "total": 8,
+    "source": "CyAI-PAPER-cyai-integrated-competencies.xlsx",
+    "entries": [
+      {
+        "title": "Ethical dilemmas",
+        "statement": "Recognize and manage ethical dilemmas at every stage of the secure AI lifecycle.",
+        "sources": "S019, S022, S024",
+        "count": null,
+        "note": "",
+        "support": "Anticipated"
+      },
+      {
+        "title": "Laws and policies",
+        "statement": "Manage the impact of laws, regulatory compliance, and policies regarding AI-integrated cybersecurity technologies and secure AI technologies.",
+        "sources": "S011, S022, S024",
+        "count": null,
+        "note": "",
+        "support": "Anticipated"
+      },
+      {
+        "title": "Threat intelligence frameworks",
+        "statement": "Strengthen cybersecurity defense by leveraging AI-threat-intelligence frameworks, such as MITRE ATLAS.",
+        "sources": "S022",
+        "count": null,
+        "note": "",
+        "support": "Unique"
+      },
+      {
+        "title": "AISecOps",
+        "statement": "Integrate cybersecurity operations into all the stages of the AI lifecycle (AISecOps)",
+        "sources": "S024",
+        "count": null,
+        "note": "",
+        "support": "Secure AI Operations (CY->AI) and AI-enabled Security Operations (AI->CY)"
+      },
+      {
+        "title": "Offensive operations",
+        "statement": "Identify attacker objectives by simulating and assessing AI offensive operations through cyber tatics, techniques, and procedures, including penetration testing, vulnerability discover, and reconnaissance.",
+        "sources": "S022",
+        "count": null,
+        "note": "",
+        "support": "AI->CY (AI-enabled Threat Modeling), \nCY->AI (Managing AI Security Risks, Secure AI Operations), \nCY Independent (Offensive Security and Pen Testing, Threat Landscape and Adversary Knowledge)"
+      },
+      {
+        "title": "Defensive operations",
+        "statement": "Protect and defend against adversarial attacks, such as manipulation of AI models through data poisioning and data leakage of PII/PHI.",
+        "sources": "S011, S022",
+        "count": null,
+        "note": "",
+        "support": "CY->AI (Privacy of AI Data, Defense of AI training data, Defense of AI Reconaissance), \nAI->CY (AI-enabled adversarial robustness), \nCY independent (Data Protection and Data Security Controls, Threat Landscape and Adversary Knowledge)"
+      },
+      {
+        "title": "AI model hardening",
+        "statement": "Apply cybersecurity techniques to harden AI models against model distillation and adversarial inputs into training data.",
+        "sources": "S022, S026",
+        "count": null,
+        "note": "",
+        "support": "AI->CY (AI-enabled Adversarial Robustness) and \nCY->AI (Defense of AI Training Data, Secure AI Models, Encryption of AI Data and Models), \nCY independent (Protetctive Controls, System Hardening, and Security Engineering)"
+      },
+      {
+        "title": "AI tools testing",
+        "statement": "Test AI tools against adversarial attacks in operationally realistic environments.",
+        "sources": "S024",
+        "count": null,
+        "note": "",
+        "support": "AI->CY (AI-enabled Defensive Tools) \nno CY->AI, \nCY independent\" Offensive Security and Pen Testing"
+      }
+    ]
+  }
+]

@@ -3,6 +3,7 @@ import { dateBadge, formatEventDate } from '../../lib/content'
 import Card from '../ui/Card'
 import Tag from '../ui/Tag'
 import Button from '../ui/Button'
+import EventThumbnail from './EventThumbnail'
 
 interface Props {
   event: EventItem
@@ -11,6 +12,7 @@ interface Props {
 
 export default function EventCard({ event, upcoming = false }: Props) {
   const badge = dateBadge(event.date)
+  const images = Array.from(new Set([...(event.coverImage ? [event.coverImage] : []), ...event.gallery]))
 
   return (
     <Card
@@ -21,13 +23,8 @@ export default function EventCard({ event, upcoming = false }: Props) {
     >
       {/* Cover image, or a gradient wash when none is set */}
       <div className="relative aspect-[16/9] shrink-0 overflow-hidden bg-ink-800 sm:aspect-auto sm:w-48 md:w-56">
-        {event.coverImage ? (
-          <img
-            src={event.coverImage}
-            alt=""
-            loading="lazy"
-            className="h-full w-full object-cover"
-          />
+        {images.length > 0 ? (
+          <EventThumbnail images={images} title={event.title} fit={event.imageFit} />
         ) : (
           <div className="h-full w-full bg-wicys-gradient opacity-30" />
         )}
@@ -52,7 +49,7 @@ export default function EventCard({ event, upcoming = false }: Props) {
       {/* Body */}
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-cream/50">
-          <time dateTime={event.date}>{formatEventDate(event.date, event.endDate)}</time>
+          {event.date && <time dateTime={event.date}>{formatEventDate(event.date, event.endDate)}</time>}
           {event.time && (
             <span className="inline-flex items-center gap-1">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -90,7 +87,7 @@ export default function EventCard({ event, upcoming = false }: Props) {
         {upcoming && event.registrationUrl && (
           <div className="mt-5">
             <Button href={event.registrationUrl} size="sm">
-              RSVP / Register
+              {event.registrationLabel || 'RSVP / Register'}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />

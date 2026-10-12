@@ -24,3 +24,6 @@ dist-ssr
 
 # Netlify
 .netlify
+
+# Full-size originals of resized site photos (not published)
+photo-originals/

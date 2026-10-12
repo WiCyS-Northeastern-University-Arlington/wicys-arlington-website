@@ -99,6 +99,14 @@ collections:
         }
       - { name: "coverImage", label: "Cover image", widget: "image", required: false }
       - { name: "body", label: "Details", widget: "markdown", required: false }
+      - { name: "completed", label: "Event completed", widget: "boolean", default: false, required: false, hint: "Show in Past events even if the event date is today." }
+      - name: "gallery"
+        label: "Thumbnail slideshow photos"
+        widget: "list"
+        required: false
+        field: { name: "image", label: "Photo", widget: "image" }
+      - { name: "imageFit", label: "Thumbnail image fit", widget: "select", options: ["cover", "contain"], default: "cover", required: false, hint: "Use contain for flyers to show the full image." }
+      - { name: "registrationLabel", label: "Link button text", widget: "string", required: false }
 
   - name: "conferences"
     label: "Conference Recaps"
@@ -146,3 +154,71 @@ collections:
           required: false,
         }
       - { name: "body", label: "Experience", widget: "markdown" }
+
+  - name: "research"
+    label: "Research"
+    label_singular: "Research Project"
+    folder: "content/research"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{type}}"
+    sortable_fields: ["title", "type", "order"]
+    fields:
+      - { name: "title", label: "Research topic", widget: "string" }
+      - {
+          name: "type",
+          label: "Section",
+          widget: "select",
+          options: [{ label: "Student research", value: "student" }, { label: "Faculty research", value: "faculty" }],
+          default: "student",
+        }
+      - {
+          name: "researchers",
+          label: "Researchers",
+          widget: "list",
+          hint: "Names of the students or faculty involved.",
+        }
+      - {
+          name: "affiliation",
+          label: "Department / lab / advisor",
+          widget: "string",
+          required: false,
+          hint: "e.g. Khoury College of Computer Sciences",
+        }
+      - {
+          name: "status",
+          label: "Status",
+          widget: "select",
+          options: ["Ongoing", "Completed", "Published"],
+          required: false,
+        }
+      - {
+          name: "tags",
+          label: "Research areas",
+          widget: "list",
+          required: false,
+          hint: "e.g. Network Security, Privacy, AI Security",
+        }
+      - {
+          name: "summary",
+          label: "Brief description",
+          widget: "text",
+          hint: "1–2 sentences shown before the card is opened.",
+        }
+      - {
+          name: "link",
+          label: "Paper / project link",
+          widget: "string",
+          required: false,
+        }
+      - {
+          name: "order",
+          label: "Display order",
+          widget: "number",
+          default: 100,
+          required: false,
+          hint: "Lower numbers appear first.",
+        }
+      - { name: "body", label: "Full description", widget: "markdown", required: false }
+      - { name: "coverImage", label: "Research graphic", widget: "image", required: false }
+      - { name: "imageAlt", label: "Graphic description", widget: "string", required: false }

@@ -55,9 +55,9 @@ export const siteConfig = {
   nav: [
     { label: 'Home', to: '/' },
     { label: 'About', to: '/about' },
-    { label: 'Events', to: '/events' },
+    { label: 'Events & Conferences', to: '/events' },
     { label: 'Newsletter', to: '/newsletter' },
-    { label: 'Conferences', to: '/conferences' },
+    { label: 'Research', to: '/research' },
     { label: 'Get Involved', to: '/get-involved' },
   ] as NavLink[],
 }

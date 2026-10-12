@@ -27,9 +27,9 @@ export default function Navbar() {
         scrolled ? 'glass-strong shadow-lg shadow-black/20' : 'bg-transparent'
       }`}
     >
-      <nav className="container-page flex h-16 items-center justify-between sm:h-18">
+      <nav className="container-page flex h-20 items-center justify-between">
         <Link to="/" className="shrink-0" aria-label="WiCyS Northeastern home">
-          <Logo withWordmark />
+          <Logo />
         </Link>
 
         {/* Desktop nav */}

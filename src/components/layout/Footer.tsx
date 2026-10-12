@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-1">
           <Link to="/" aria-label="WiCyS Northeastern home">
-            <Logo withWordmark />
+            <Logo className="h-16 sm:h-20" />
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/60">
             {siteConfig.tagline}
