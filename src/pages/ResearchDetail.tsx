@@ -25,6 +25,10 @@ export default function ResearchDetail() {
         <p className="mt-4 text-lg leading-relaxed text-cream/70">{item.summary}</p>
         <p className="mt-5 font-medium text-wicys-green-300">{item.researchers.join(', ')}</p>
         {item.affiliation && <p className="mt-1 text-sm text-cream/60">{item.affiliation}</p>}
+        {item.slug === 'cyai' && <>
+          <p className="mt-5 font-medium text-wicys-green-300">Dr. Mihaela Sabin</p>
+          <p className="mt-1 text-sm text-cream/60">University of New Hampshire</p>
+        </>}
         {item.status && <p className="mt-2 text-sm text-cream/60">{item.status}</p>}
         {item.slug === 'cyai' && <a href="#findings" className="mt-8 inline-flex rounded-full bg-wicys-gradient px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform hover:-translate-y-1">Explore the competencies ↓</a>}
       </MotionReveal>
