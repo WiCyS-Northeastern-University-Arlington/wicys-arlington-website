@@ -37,7 +37,14 @@ export default function ResearchDetail() {
       {item.coverImage && (
         <MotionReveal className="mt-10 max-w-4xl">
           {item.slug === 'cyai' && <p className="mb-3 text-xs uppercase tracking-widest text-cream/50">Research convergence diagram</p>}
-          <img src={item.coverImage} alt={item.imageAlt || item.title} className="max-h-[32rem] w-full rounded-2xl border border-white/10 bg-white object-contain" />
+          <div className="relative">
+            <img src={item.coverImage} alt={item.imageAlt || item.title} className="max-h-[32rem] w-full rounded-2xl border border-white/10 bg-white object-contain" />
+            {item.slug === 'cyai' && (
+              <p className="absolute bottom-2 right-3 max-w-[90%] rounded bg-white/90 px-2 py-1 text-right text-[10px] leading-snug text-slate-700 sm:bottom-3 sm:right-4 sm:text-xs">
+                <strong className="font-bold"><em className="italic">CyAI depiction by <span className="text-violet-700">Bansi Bhesaniya</span><br />Northeastern University</em></strong>
+              </p>
+            )}
+          </div>
         </MotionReveal>
       )}
       <MotionReveal className="mt-10 max-w-4xl rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-10">
