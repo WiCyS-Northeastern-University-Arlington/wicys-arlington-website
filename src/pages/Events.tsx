@@ -79,7 +79,7 @@ export default function Events() {
         <SectionHeading
           eyebrow="Conferences"
           title="Moments from past conferences"
-          subtitle="Click any photo to view it full-size."
+          subtitle="A look back at the connections and memories we made."
           className="mb-10"
         />
         <PhotoGallery photos={conferencePhotos} />

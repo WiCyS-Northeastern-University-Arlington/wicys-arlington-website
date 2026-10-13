@@ -159,7 +159,7 @@ const momentPhotos = Object.entries(momentFiles)
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([path, src]) => {
     const name = slugFromPath(path).replace(/\.\w+$/, '').replace(/[-_]+/g, ' ').trim()
-    return { src, caption: name.charAt(0).toUpperCase() + name.slice(1) }
+    return { src, caption: /^whatsapp\s+image\b/i.test(name) ? '' : name.charAt(0).toUpperCase() + name.slice(1) }
   })
 
 export const conferencePhotos: { src: string; caption: string }[] = [
