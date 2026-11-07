@@ -195,7 +195,7 @@
     "id": "cyber-coupled",
     "label": "CY → AI",
     "description": "Using cybersecurity to secure AI",
-    "total": 61,
+    "total": 59,
     "source": "CyAI-PAPER-cyber-coupled-clusters-competencies.xlsx",
     "entries": [
       {
@@ -324,7 +324,7 @@
     "id": "ai-coupled",
     "label": "AI → CY",
     "description": "Using AI to strengthen cybersecurity",
-    "total": 31,
+    "total": 22,
     "source": "CyAI-PAPER-ai-coupled-clusters-competencies.xlsx",
     "entries": [
       {

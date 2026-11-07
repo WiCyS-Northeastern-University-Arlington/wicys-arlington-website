@@ -19,7 +19,7 @@ export default function CyAIExplorer() {
       <p className="text-sm font-medium uppercase tracking-widest text-wicys-green-300">Explore the findings</p>
       <h2 id="cyai-explorer-title" className="mt-3 text-3xl font-semibold text-white">Two fields. A shared frontier.</h2>
       <p className="mt-3 max-w-3xl leading-relaxed text-cream/70">
-        The paper identifies 272 professional competencies. Start with either field’s foundations,
+        The paper identifies 261 professional competencies. Start with either field’s foundations,
         explore how each strengthens the other, then discover the eight convergent competencies.
       </p>
 
@@ -32,12 +32,12 @@ export default function CyAIExplorer() {
             className={`block w-full rounded-xl border p-4 text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-wicys-green-300 ${selected === item.id ? 'border-wicys-green-300/60 bg-white/10' : 'border-white/10 hover:bg-white/5'}`}>
             <div className="flex items-center justify-between gap-3">
               <span className="font-medium text-white">{item.label}</span>
-              <span className="text-sm tabular-nums text-cream/80">{item.total} <span className="text-cream/50">· {(item.total / 272 * 100).toFixed(1)}%</span></span>
+              <span className="text-sm tabular-nums text-cream/80">{item.total} <span className="text-cream/50">· {(item.total / 261 * 100).toFixed(1)}%</span></span>
             </div>
             <p className="mt-1 text-sm text-cream/60">{item.description}</p>
             <div className="mt-3 h-2 overflow-hidden rounded-full bg-white/5" aria-hidden="true">
-              <motion.div initial={{ width: reduceMotion ? `${item.total / 272 * 100}%` : 0 }}
-                whileInView={{ width: `${item.total / 272 * 100}%` }} viewport={{ once: true }}
+              <motion.div initial={{ width: reduceMotion ? `${item.total / 261 * 100}%` : 0 }}
+                whileInView={{ width: `${item.total / 261 * 100}%` }} viewport={{ once: true }}
                 transition={{ duration: reduceMotion ? 0 : 0.8, delay: reduceMotion ? 0 : index * 0.08 }}
                 className={`h-full rounded-full ${colors[index]}`} />
             </div>
@@ -75,10 +75,6 @@ export default function CyAIExplorer() {
         {entries.length === 0 && <p className="py-8 text-cream/70">No matching statements. Try another topic or source ID.</p>}
         <p className="mt-6 break-words text-xs text-cream/50">Workbook: {group.source}</p>
       </div>
-      <details className="mt-8 rounded-xl border border-white/10 p-4 text-sm text-cream/60">
-        <summary className="cursor-pointer font-medium text-cream/80">About the counts and workbook revisions</summary>
-        <p className="mt-3 leading-relaxed">The overview uses the abstract’s counts: 67 cyber-independent, 105 AI-independent, 61 CY → AI, 31 AI → CY, and 8 convergent. The workbook summary lists 15 CY → AI clusters totaling 59 competencies and 7 AI → CY rows totaling 28; the abstract reports 5 AI → CY clusters. Revision notes are retained, including the offensive cluster marked as moved to convergence. These workbook rows are shown as supplied and are not added to the paper’s total.</p>
-      </details>
     </section>
   )
 }

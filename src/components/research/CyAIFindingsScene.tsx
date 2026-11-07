@@ -14,7 +14,7 @@ export default function CyAIFindingsScene({ selected, onSelect }: { selected: st
     <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(ellipse_at_50%_60%,rgba(139,92,246,0.2),transparent_70%)] p-4 sm:p-8">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div><h3 className="font-semibold text-white">The competency landscape</h3><p className="mt-1 text-sm text-cream/60">Select a tower to explore its findings. Height represents the paper’s competency count.</p></div>
-        <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-cream/70">272 competencies</span>
+        <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-cream/70">261 competencies</span>
       </div>
       <div className="relative py-12" style={{ perspective: 900 }}>
         <motion.div animate={{ rotateY: angle, rotateX: reduced ? 0 : -8 }} transition={{ duration: reduced ? 0 : 0.4 }}
@@ -48,7 +48,7 @@ export default function CyAIFindingsScene({ selected, onSelect }: { selected: st
         </motion.div>
       </div>
       <div className="flex flex-wrap items-center justify-between gap-5 border-t border-white/10 pt-5">
-        <p aria-live="polite" className="text-sm text-cream/70"><span className="font-semibold text-white">{current.label}</span><br />{current.total} competencies · {(current.total / 272 * 100).toFixed(1)}% of the paper’s findings</p>
+        <p aria-live="polite" className="text-sm text-cream/70"><span className="font-semibold text-white">{current.label}</span><br />{current.total} competencies · {(current.total / 261 * 100).toFixed(1)}% of the paper’s findings</p>
         <label className="flex items-center gap-3 text-xs text-cream/60">Rotate view
           <input aria-label="Rotate the 3D findings chart" type="range" min="-30" max="30" value={angle} onChange={(event) => setAngle(Number(event.target.value))} className="w-28 accent-violet-400 sm:w-40" />
         </label>

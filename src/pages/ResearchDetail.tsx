@@ -6,7 +6,6 @@ import MotionReveal from '../components/ui/MotionReveal'
 import Tag from '../components/ui/Tag'
 import CyAIExplorer from '../components/research/CyAIExplorer'
 import CyAIConvergence from '../components/research/CyAIConvergence'
-import CyAIPrompts from '../components/research/CyAIPrompts'
 import NotFound from './NotFound'
 
 export default function ResearchDetail() {
@@ -24,9 +23,11 @@ export default function ResearchDetail() {
         {item.slug === 'cyai' && <p className="mt-4 text-2xl font-semibold leading-tight text-white sm:text-3xl">At the intersection of<br />intelligence and security.</p>}
         <p className="mt-4 text-lg leading-relaxed text-cream/70">{item.summary}</p>
         <p className="mt-5 font-medium text-wicys-green-300">{item.researchers.join(', ')}</p>
+        {item.slug === 'cyai' && <a href="mailto:e.hawthorne@northeastern.edu" className="mt-1 block text-sm text-wicys-green-300 hover:underline">e.hawthorne@northeastern.edu</a>}
         {item.affiliation && <p className="mt-1 text-sm text-cream/60">{item.affiliation}</p>}
         {item.slug === 'cyai' && <>
           <p className="mt-5 font-medium text-wicys-green-300">Dr. Mihaela Sabin</p>
+          <a href="mailto:mihaela.sabin@unh.edu" className="mt-1 block text-sm text-wicys-green-300 hover:underline">mihaela.sabin@unh.edu</a>
           <p className="mt-1 text-sm text-cream/60">University of New Hampshire</p>
         </>}
         {item.status && <p className="mt-2 text-sm text-cream/60">{item.status}</p>}
@@ -55,8 +56,16 @@ export default function ResearchDetail() {
         </div>
         {item.link && <a href={item.link} target="_blank" rel="noreferrer" className="mt-6 inline-block text-wicys-green-300 hover:underline">View project →</a>}
       </MotionReveal>
+      {item.slug === 'cyai' && <section aria-labelledby="cyai-resources-title" className="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-10">
+        <h2 id="cyai-resources-title" className="text-2xl font-semibold text-white">Research paper & dataset</h2>
+        <a href="https://camps.aptaracorp.com/ACM_PMS/PMS/ACM/SIGCITE26/39/5ab0fabe-c2ac-11f1-949e-16ffef0ebbf1/OUT/sigcite26-39.html" target="_blank" rel="noreferrer" className="mt-4 inline-block text-wicys-green-300 hover:underline">Read the open access research paper →</a>
+        <div className="mt-6 border-t border-white/10 pt-6">
+          <h3 className="text-lg font-semibold text-white">RAW-dataset-all-proposed-competencies</h3>
+          <p className="mt-2 text-sm text-cream/70">Download the supplied dataset README as an Excel-compatible CSV.</p>
+          <a href="/downloads/RAW-dataset-all-proposed-competencies.csv" download="RAW-dataset-all-proposed-competencies.csv" className="mt-4 inline-flex rounded-full bg-wicys-gradient px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform hover:-translate-y-1">Download CSV (opens in Excel) ↓</a>
+        </div>
+      </section>}
       {item.slug === 'cyai' && <div id="findings" className="mt-12 scroll-mt-28"><CyAIExplorer /></div>}
-      {item.slug === 'cyai' && <CyAIPrompts />}
     </article>
   )
 }
