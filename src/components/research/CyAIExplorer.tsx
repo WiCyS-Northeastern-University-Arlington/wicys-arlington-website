@@ -73,7 +73,6 @@ export default function CyAIExplorer() {
           ))}
         </motion.div>
         {entries.length === 0 && <p className="py-8 text-cream/70">No matching statements. Try another topic or source ID.</p>}
-        <p className="mt-6 break-words text-xs text-cream/50">Workbook: {group.source}</p>
       </div>
     </section>
   )

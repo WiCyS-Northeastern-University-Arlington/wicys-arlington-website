@@ -1,7 +1,7 @@
 [
   {
     "id": "cyber-independent",
-    "label": "Cybersecurity foundations",
+    "label": "Cyber Independent",
     "description": "Cybersecurity on its own",
     "total": 67,
     "source": "CyAI-PAPER-cyber-independent-clusters-competencies.xlsx",
@@ -88,7 +88,7 @@
   },
   {
     "id": "ai-independent",
-    "label": "AI foundations",
+    "label": "AI Independent",
     "description": "Artificial intelligence on its own",
     "total": 105,
     "source": "CyAI-PAPER-ai-independent-clusters-competencies.xlsx",
