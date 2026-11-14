@@ -60,9 +60,9 @@ export default function ResearchDetail() {
         <h2 id="cyai-resources-title" className="text-2xl font-semibold text-white">Research paper & dataset</h2>
         <a href="https://camps.aptaracorp.com/ACM_PMS/PMS/ACM/SIGCITE26/39/5ab0fabe-c2ac-11f1-949e-16ffef0ebbf1/OUT/sigcite26-39.html" target="_blank" rel="noreferrer" className="mt-4 inline-block text-wicys-green-300 hover:underline">Read the open access research paper →</a>
         <div className="mt-6 border-t border-white/10 pt-6">
-          <h3 className="text-lg font-semibold text-white">RAW-dataset-all-proposed-competencies</h3>
-          <p className="mt-2 text-sm text-cream/70">Download the supplied dataset README as an Excel-compatible CSV.</p>
-          <a href="/downloads/RAW-dataset-all-proposed-competencies.csv" download="RAW-dataset-all-proposed-competencies.csv" className="mt-4 inline-flex rounded-full bg-wicys-gradient px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform hover:-translate-y-1">Download CSV (opens in Excel) ↓</a>
+          <h3 className="text-lg font-semibold text-white">RAW-cyber-AI-datasets-all-proposed-competencies</h3>
+          <p className="mt-2 text-sm text-cream/70">Download the complete Excel workbook to view all six dataset tabs.</p>
+          <a href="/downloads/RAW-cyber-AI-datasets-all-proposed-competencies.xlsx" download="RAW-cyber-AI-datasets-all-proposed-competencies.xlsx" className="mt-4 inline-flex rounded-full bg-wicys-gradient px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform hover:-translate-y-1">Download Excel workbook ↓</a>
         </div>
       </section>}
       {item.slug === 'cyai' && <div id="findings" className="mt-12 scroll-mt-28"><CyAIExplorer /></div>}
